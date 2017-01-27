@@ -33,7 +33,43 @@ minus = '-'
 
 You can also multiply strings:
 '+' * 10 ===> '++++++++++'
+'''
 
+
+def printer_function():
+    """It prints the square."""
+    print("\
++ - - - - + - - - - +\n\
+|         |         |\n\
+|         |         |\n\
+|         |         |\n\
+|         |         |\n\
++ - - - - + - - - - +\n\
+|         |         |\n\
+|         |         |\n\
+|         |         |\n\
+|         |         |\n\
++ - - - - + - - - - +\
+")
+
+    print("Just kidding.")
+
+    for row in range(11):
+        if row == 0 or row == 5 or row == 10:
+            p1 = "+"
+            p2 = "-"
+        else:
+            p1 = "|"
+            p2 = " "
+        for b in range(2):
+            print(p1, end=' ')
+            for i in range(4):
+                print(p2, end=" ")
+        print(p1)
+
+
+printer_function()
+'''
 Part 2
 Making it more general
 
@@ -70,7 +106,34 @@ print_grid(15) prints a larger grid:
 |               |               |
 |               |               |
 + - - - - - - - + - - - - - - - +
+'''
 
+
+def printer_function(num):
+    """It prints the square again."""
+    for row in range(num + 2):
+        if row == 0 or row == 1 + num // 2 or row == num + 1:
+            p1 = "+"
+            p2 = "-"
+        else:
+            p1 = "|"
+            p2 = " "
+        for b in range(2):
+            print(p1, end=' ')
+            for i in range(num // 2):
+                print(p2, end=" ")
+        print(p1)
+
+
+printer_function(1)
+printer_function(3)
+printer_function(5)
+printer_function(7)
+printer_function(9)
+printer_function(11)
+printer_function(15)
+
+'''
 Part 3:
 Even more general...
 
@@ -121,3 +184,23 @@ Another example: print_grid2(5,3):
 |       |       |       |       |       |
 + - - - + - - - + - - - + - - - + - - - +
 '''
+
+
+def printer_function(boxes, num):
+    """It prints the square again again."""
+    for row in range(num*boxes + boxes + 1):
+        if row % boxes:
+            p1 = "|"
+            p2 = " "
+        else:
+            p1 = "+"
+            p2 = "-"
+        for b in range(boxes):
+            print(p1, end=' ')
+            for i in range(num):
+                print(p2, end=" ")
+        print(p1)
+
+
+printer_function(3, 4)
+printer_function(5, 3)
