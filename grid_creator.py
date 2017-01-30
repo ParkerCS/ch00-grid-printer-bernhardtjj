@@ -188,8 +188,9 @@ Another example: print_grid2(5,3):
 
 def printer_function(boxes, num):
     """It prints the square again again."""
-    for row in range(num*boxes + boxes + 1):
-        if row % boxes:
+    max_rows = num * boxes + boxes + 1
+    for row in range(max_rows):
+        if row % (max_rows // boxes):
             p1 = "|"
             p2 = " "
         else:
