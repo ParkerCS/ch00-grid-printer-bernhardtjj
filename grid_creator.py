@@ -1,3 +1,6 @@
+# Looks good.
+# You could just make a loop to run all those functions.
+
 '''
 Grid Printer Exercise
 Printing a Grid (adapted from Downey, “Think Python”, ex. 3.5)
